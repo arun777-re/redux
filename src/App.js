@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
-
+import Navbar from './Navbar'
+import Soap from './Soap';
 function App() {
+  useEffect(() => {
+    const change =()=>{
+      document.title="redux application";
+    }
+    setInterval(()=>{
+      change();
+    },15000);
+   
+  }, [])
+  
   return (
+    <div>
+    <Navbar/>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Soap/>
+     </div>
+    
     </div>
+    
   );
 }
 
